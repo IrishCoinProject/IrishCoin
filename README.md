@@ -1,31 +1,29 @@
-Maplecoin integration/staging tree
+Irishcoin integration/staging tree
 ================================
 
-http://www.MapleCoin.info
+http://www.IrishCoin.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011 Litecoin Developers
-Copyright (c) 2014 Maplecoin Developers
+Copyright (c) 2014 Irishcoin Developers
 
-What is Maplecoin?
+What is Irishcoin?
 ----------------
 
-Maplecoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+Irishcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
  - 2 minute block targets
- - subsidy halves in 241k blocks (~1 year)
- - ~2.4 billion total coins
-
-The rest is the same as Bitcoin.
- - 5000 coins per block
- - 2016 blocks to retarget difficulty
+ - subsidy halves in 320k blocks (~1 year +)
+ - ~64 million total coins
+ - 100 coins per block
+ - 90 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Maplecoin client sofware, see http://www.MapleCoin.cf.
+the Maplecoin client sofware, see http://www.IrishCoin.org
 
 License
 -------
 
-Mapecoin is released under the terms of the MIT license. See `COPYING` for more
+Irishcoin is released under the terms of the MIT license. See `COPYING` for more
 information or see http://opensource.org/licenses/MIT.
 
 Development process
