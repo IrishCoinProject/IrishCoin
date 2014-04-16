@@ -18,7 +18,7 @@ Irishcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm
  - 90 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Maplecoin client sofware, see http://www.IrishCoin.org
+the Irishcoin client sofware, see http://www.IrishCoin.org
 
 License
 -------
