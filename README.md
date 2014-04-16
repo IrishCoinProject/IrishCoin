@@ -10,12 +10,12 @@ Copyright (c) 2014 Irishcoin Developers
 What is Irishcoin?
 ----------------
 
-Irishcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+Irishcoin is a fork of MapleCoin using scrypt as a proof-of-work algorithm.
  - 2 minute block targets
  - subsidy halves in 320k blocks (~1 year +)
  - ~64 million total coins
  - 100 coins per block
- - 90 blocks to retarget difficulty
+ - 4 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
 the Irishcoin client sofware, see http://www.IrishCoin.org
