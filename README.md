@@ -12,7 +12,7 @@ What is Irishcoin?
 
 Irishcoin is a fork of MapleCoin using scrypt as a proof-of-work algorithm.
  - 2 minute block targets
- - subsidy halves in 320k blocks (~1 year +)
+ - subsidy halves in 320k blocks (~1.5 year)
  - ~64 million total coins
  - 100 coins per block
  - 4 blocks to retarget difficulty
