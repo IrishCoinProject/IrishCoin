@@ -3,14 +3,17 @@ Irishcoin integration/staging tree
 
 http://www.IrishCoin.org
 
-Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011 Litecoin Developers
+
+Copyright (c) 2014 Maplecoin Developers
+
 Copyright (c) 2014 Irishcoin Developers
 
 What is Irishcoin?
 ----------------
 
 Irishcoin is a fork of MapleCoin using scrypt as a proof-of-work algorithm.
+
  - 2 minute block targets
  - subsidy halves in 320k blocks (~1.5 year)
  - ~64 million total coins
