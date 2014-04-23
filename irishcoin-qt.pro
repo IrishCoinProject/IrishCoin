@@ -1,6 +1,6 @@
 TEMPLATE = app
-TARGET = maplecoin-qt
-macx:TARGET = "maplecoin-Qt"
+TARGET = irishcoin-qt
+macx:TARGET = "irishcoin-Qt"
 VERSION = 0.8.3
 INCLUDEPATH += src src/json src/qt
 QT += network
@@ -213,7 +213,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/leveldb.h \
     src/threadsafety.h \
     src/limitedmap.h \
-    src/qt/splashscreen.h 
+    src/qt/splashscreen.h
 
 SOURCES += src/qt/bitcoin.cpp \
     src/qt/bitcoingui.cpp \
@@ -282,7 +282,7 @@ SOURCES += src/qt/bitcoin.cpp \
     src/noui.cpp \
     src/leveldb.cpp \
     src/txdb.cpp \
-    src/qt/splashscreen.cpp 
+    src/qt/splashscreen.cpp
 
 RESOURCES += src/qt/bitcoin.qrc
 
