@@ -1,7 +1,7 @@
-This directory contains files used to package bitcoind/bitcoin-qt
+This directory contains files used to package irishcoind/irishcoin-qt
 for Debian-based Linux systems.
 
-If you compile bitcoind/bitcoin-qt yourself, there are some
+If you compile irishcoind/irishcoin-qt yourself, there are some
 useful files here:
 
 bitcoin: URI support
