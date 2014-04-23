@@ -1,9 +1,9 @@
 Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=174
-Upstream-Name: Bitcoin
-Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
- irc://#bitcoin@freenode.net
-Source: http://sourceforge.net/projects/bitcoin/files/
- https://github.com/bitcoin/bitcoin
+Upstream-Name: Irishcoin
+Upstream-Contact: AP <Contact@cryptodirect.info>
+ irc://#irishcoin@freenode.net
+
+ https://github.com/IrishCoin/IrishCoin
 
 Files: *
 Copyright: 2009-2012, Bitcoin Developers
