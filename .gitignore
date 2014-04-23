@@ -1,7 +1,7 @@
 src/*.exe
-src/maplecoin
-src/maplecoind
-src/test_maplecoin
+src/irishcoin
+src/irishcoind
+src/test_irishcoin
 .*.swp
 *.*~*
 *.bak
@@ -9,17 +9,17 @@ src/test_maplecoin
 *.orig
 *.o
 *.patch
-.maplecoin
+.irishcoin
 
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-maplecoin-qt
-Maplecoin-Qt.app
+irishcoin-qt
+Irishcoin-Qt.app
 
 # Unit-tests
 Makefile.test
-maplecoin-qt_test
+irishcoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
