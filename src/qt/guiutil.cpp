@@ -84,7 +84,7 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // return if URI is not valid or is no bitcoin URI
-    if(!uri.isValid() || uri.scheme() != QString("maplecoin"))
+    if(!uri.isValid() || uri.scheme() != QString("irishcoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -139,9 +139,9 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("maplecoin://"))
+    if(uri.startsWith("irishcoin://"))
     {
-        uri.replace(0, 11, "maplecoin:");
+        uri.replace(0, 11, "irishcoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -295,7 +295,7 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "maplecoin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "irishcoin.lnk";
 }
 
 bool GetStartOnSystemStartup()
@@ -377,7 +377,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "maplecoin.desktop";
+    return GetAutostartDir() / "irishcoin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -489,10 +489,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("Maplecoin-Qt") + " " + tr("version") + " " +
+    header = tr("Irishcoin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  maplecoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  irishcoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -501,7 +501,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("Maplecoin-Qt"));
+    setWindowTitle(tr("Irishcoin-Qt"));
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));
