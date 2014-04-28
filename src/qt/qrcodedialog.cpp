@@ -46,7 +46,7 @@ void QRCodeDialog::setModel(OptionsModel *model)
     if (model)
         connect(model, SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
 
-    // update the display unit, to not use the default ("BTC")
+    // update the display unit, to not use the default ("MPL")
     updateDisplayUnit();
 }
 
@@ -85,7 +85,7 @@ void QRCodeDialog::genCode()
 
 QString QRCodeDialog::getURI()
 {
-    QString ret = QString("maplecoin:%1").arg(address);
+    QString ret = QString("irishcoin:%1").arg(address);
     int paramCount = 0;
 
     ui->outUri->clear();
