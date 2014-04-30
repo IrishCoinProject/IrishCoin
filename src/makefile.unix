@@ -151,10 +151,10 @@ OBJS_SSE2= obj/scrypt-sse2.o
 OBJS += $(OBJS_SSE2)
 endif
 
-all: maplecoind
+all: irishcoind
 
-test check: test_maplecoin FORCE
-	./test_maplecoin
+test check: test_irishcoin FORCE
+	./test_irishcoin
 
 #
 # LevelDB support
@@ -205,7 +205,7 @@ test_maplecoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(LINK) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ $(TESTLIBS) $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f maplecoind test_maplecoin
+	-rm -f irishcoind test_irishcoin
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P
