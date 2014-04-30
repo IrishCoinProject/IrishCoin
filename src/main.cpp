@@ -1,7 +1,7 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin Developers
 // Copyright (c) 2011 The LiteCoin Developers
 // Copyright (c) 2014 The Maplecoin Developers
+// Copyright (c) 2014 The Irishcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,7 +34,7 @@ unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
 uint256 hashGenesisBlock("0x704aab6369be86bd93c4bab76f9f5556bcbd5d85d59e5af8778fe7eadbfd3bb4");
-static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Maplecoin: starting difficulty is 1 / 2^12
+static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Irishcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 uint256 nBestChainWork = 0;
@@ -66,7 +66,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Maplecoin Signed Message:\n";
+const string strMessageMagic = "Irishcoin Signed Message:\n";
 
 double dHashesPerSec = 0.0;
 int64 nHPSTimerStart = 0;
@@ -1073,16 +1073,16 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 5000 * COIN;
+    int64 nSubsidy = 10000 * COIN;
 
-    // Subsidy is cut in half every 241920 blocks, which will occur approximately every 4 years
-    nSubsidy >>= (nHeight / 241920); // Maplecoin: 242k blocks in ~1 year
+    // Subsidy is cut in half every 320000 blocks, which will occur approximately every 4 years
+    nSubsidy >>= (nHeight / 320000); // Irishcoin: 320k blocks in ~1.5 year
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 8 * 60; // Maplecoin: 4 minutes
-static const int64 nTargetSpacing = 120; // Maplecoin: 2 minutes
+static const int64 nTargetTimespan = 8 * 60; // Irishcoin: 4 minutes
+static const int64 nTargetSpacing = 120; // Irishcoin: 2 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -1141,7 +1141,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         return pindexLast->nBits;
     }
 
-    // Maplecoin: This fixes an issue where a 51% attack can change difficulty at will.
+    // Irishcoin: This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
     int blockstogoback = nInterval-1;
     if ((pindexLast->nHeight+1) != nInterval)
@@ -2761,7 +2761,7 @@ bool InitBlockIndex() {
     if (!fReindex) {
 
         // Genesis block
-        const char* pszTimestamp = "March 22, 2014: A Mari Usque Ad Mare - Vires in Numeris";
+        const char* pszTimestamp = "May 15, 2014: Bonn Eireannach - Ni neart go cur le cheile";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -3190,7 +3190,7 @@ void static ProcessGetData(CNode* pfrom)
     if (!vNotFound.empty()) {
         // Let the peer know that we didn't find what it asked for, so it doesn't
         // have to wait around forever. Currently only SPV clients actually care
-        // about this message: it's needed when they are recursively walking the
+        // about this message: it's needed when they are recursively valking the
         // dependencies of relevant unconfirmed transactions. SPV clients want to
         // do that because they want to know about (and store and rebroadcast and
         // risk analyze) the dependencies of transactions relevant to them, without
@@ -4079,7 +4079,7 @@ bool SendMessages(CNode* pto, bool fSendTrickle)
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// MaplecoinMiner
+// IrishcoinMiner
 //
 
 int static FormatHashBlocks(void* pbuffer, unsigned int len)
@@ -4486,7 +4486,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         return false;
 
     //// debug print
-    printf("Maplecoin RPCMiner:\n");
+    printf("Irishcoin RPCMiner:\n");
     printf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
     pblock->print();
     printf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue).c_str());
@@ -4495,7 +4495,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("MapleCoinMiner : generated block is stale");
+            return error("IrishCoinMiner : generated block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -4509,7 +4509,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         // Process this block the same as if we had received it from another node
         CValidationState state;
         if (!ProcessBlock(state, NULL, pblock))
-            return error("MapleCoinMiner : ProcessBlock, block not accepted");
+            return error("IrishCoinMiner : ProcessBlock, block not accepted");
     }
 
     return true;
