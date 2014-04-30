@@ -1,7 +1,7 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin Developers
 // Copyright (c) 2011 The Litecoin Developers
 // Copyright (c) 2014 The Maplecoin Developers
+// Copyright (c) 2014 The Irishcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1114,7 +1114,7 @@ void ThreadMapPort()
             }
         }
 
-        string strDesc = "Maplecoin " + FormatFullVersion();
+        string strDesc = "Irishcoin " + FormatFullVersion();
 
         try {
             loop {
@@ -1194,14 +1194,14 @@ void MapPort(bool)
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strMainNetDNSSeed[][2] = {
-    {"maplecoin.cf", "node.maplecoin.cf"},
-    {"maplecoin.info", "node.maplecoin.info"},
+    {"irishcoin.org", "node.irishcoin.org"},
+    {"irishcoin.org", "dns.irishcoin.org"},
     {NULL, NULL}
 };
 
 static const char *strTestNetDNSSeed[][2] = {
-    {"maplecoin.cf", "testnode.maplecoin.cf"},
-    {"maplecoin.info", "testnode.maplecoin.info"},
+    {"irishcoin.org", "testnode.irishcoin.org"},
+    {"irishcoin.org", "testdns.irishcoin.org"},
     {NULL, NULL}
 };
 
@@ -1746,7 +1746,7 @@ bool BindListenPort(const CService &addrBind, string& strError)
     {
         int nErr = WSAGetLastError();
         if (nErr == WSAEADDRINUSE)
-            strError = strprintf(_("Unable to bind to %s on this computer. Maplecoin is probably already running."), addrBind.ToString().c_str());
+            strError = strprintf(_("Unable to bind to %s on this computer. Irishcoin is probably already running."), addrBind.ToString().c_str());
         else
             strError = strprintf(_("Unable to bind to %s on this computer (bind returned error %d, %s)"), addrBind.ToString().c_str(), nErr, strerror(nErr));
         printf("%s\n", strError.c_str());
