@@ -3,7 +3,7 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-# Mac OS X makefile for bitcoin
+# Mac OS X makefile for irishcoin
 # Originally by Laszlo Hanyecz (solar@heliacal.net)
 
 CXX=llvm-g++
@@ -127,10 +127,10 @@ ifneq (${USE_IPV6}, -)
 	DEFS += -DUSE_IPV6=$(USE_IPV6)
 endif
 
-all: litecoind
+all: irishcoind
 
-test check: test_litecoin FORCE
-	./test_litecoin
+test check: test_irishcoin FORCE
+	./test_irishcoin
 
 #
 # LevelDB support
@@ -180,7 +180,7 @@ test_litecoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) $(TESTLIBS)
 
 clean:
-	-rm -f litecoind test_litecoin
+	-rm -f irishcoind test_irishcoin
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P
