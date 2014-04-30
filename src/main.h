@@ -1,7 +1,7 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin Developers
 // Copyright (c) 2011 The Litecoin Developers
 // Copyright (c) 2014 The Maplecoin Developers
+// Copyright (c) 2014 The Irishcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_MAIN_H
@@ -52,7 +52,7 @@ static const int64 DUST_SOFT_LIMIT = 1000000; // 0.01 LTC
 /** Dust Hard Limit, ignored as wallet inputs (mininput default) */
 static const int64 DUST_HARD_LIMIT = 10000;   // 0.0001 LTC mininput
 /** No amount larger than this (in satoshi) is valid */
-static const int64 MAX_MONEY = 2419200000 * COIN;
+static const int64 MAX_MONEY = 6400000000 * COIN;
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
 static const int COINBASE_MATURITY = 100;
