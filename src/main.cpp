@@ -1073,7 +1073,7 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 10000 * COIN;
+    int64 nSubsidy = 100 * COIN;
 
     // Subsidy is cut in half every 320000 blocks, which will occur approximately every 4 years
     nSubsidy >>= (nHeight / 320000); // Irishcoin: 320k blocks in ~1.5 year
