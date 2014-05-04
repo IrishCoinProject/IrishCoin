@@ -982,7 +982,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "maplecoin";
+    const char* pszModule = "irishcoin";
 #endif
     if (pex)
         return strprintf(
@@ -1323,7 +1323,7 @@ void AddTimeData(const CNetAddr& ip, int64 nTime)
         int64 nMedian = vTimeOffsets.median();
         std::vector<int64> vSorted = vTimeOffsets.sorted();
         // Only let other nodes change our time by so much
-        if (abs64(nMedian) < 35 * 60) // Maplecoin: changed maximum adjust to 35 mins to avoid letting peers change our time too much in case of an attack.
+        if (abs64(nMedian) < 35 * 60) // Irishcoin: changed maximum adjust to 35 mins to avoid letting peers change our time too much in case of an attack.
         {
             nTimeOffset = nMedian;
         }
