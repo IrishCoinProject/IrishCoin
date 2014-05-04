@@ -2761,7 +2761,7 @@ bool InitBlockIndex() {
     if (!fReindex) {
 
         // Genesis block
-        const char* pszTimestamp = "May 15, 2014: Bonn Eireannach - Ni neart go cur le cheile";
+        const char* pszTimestamp = "May 10, 2014: Bonn Eireannach - Ni neart go cur le cheile";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
