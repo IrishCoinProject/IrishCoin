@@ -33,7 +33,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x704aab6369be86bd93c4bab76f9f5556bcbd5d85d59e5af8778fe7eadbfd3bb4");
+uint256 hashGenesisBlock("0x31afc6c26b37f0e474ee3456e15797c58035cf6519adc705b56ae89a406793b8");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Irishcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1074,6 +1074,9 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 100 * COIN;
+	
+	if (nHeight < 1001)
+		nSubsidy = 4500 * COIN;
 
     // Subsidy is cut in half every 320000 blocks, which will occur approximately every 4 years
     nSubsidy >>= (nHeight / 320000); // Irishcoin: 320k blocks in ~1.5 year
@@ -1081,7 +1084,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 8 * 60; // Irishcoin: 4 minutes
+static const int64 nTargetTimespan = 8 * 60; // Irishcoin: 8 minutes
 static const int64 nTargetSpacing = 120; // Irishcoin: 2 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
@@ -2773,14 +2776,14 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1398882073;
+        block.nTime    = 1399489365;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2087033107;
+        block.nNonce   = 272064;
 
         if (fTestNet)
         {
-            block.nTime    = 1398882073;
-            block.nNonce   = 2087033107;
+            block.nTime    = 1399489366;
+            block.nNonce   = 0;
         }
 
         //// debug print
@@ -2788,7 +2791,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x514ecd5a6922b761bf26c135fc88ff84187123ba52f47c1e45fe00f56b429b3c"));
+        assert(block.hashMerkleRoot == uint256("0xa1a5f4c8f7ea94b39e0527b0a6fd6ae076139a22c7991802a74a8f39354e0dee"));
         block.print();
         assert(hash == hashGenesisBlock);
 
